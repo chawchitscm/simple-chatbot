@@ -1,0 +1,35 @@
+h1 {
+  text-align: center;
+}
+
+ul li {
+  list-style-type: none;
+  clear: both;
+}
+
+.container {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.bot {
+  background-color:aqua;
+  padding: 10px;
+  float: left;
+  margin-bottom: 5px;
+}
+
+.reply {
+  text-align: right;
+  padding: 10px;
+  float: right;
+  margin-bottom: 5px;
+}
+
+.reply ul li {
+  float: left;
+}
+.option {
+  cursor: pointer;
+  background: beige;
+}
