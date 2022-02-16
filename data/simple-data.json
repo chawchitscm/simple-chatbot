@@ -3,6 +3,7 @@
   "text": "How are you?",
   "messageType": "Question",
   "imageUrl": "",
+  "audioPath": "audio/how_r_u.mp3",
   "nextMessageId": "",
   "options": [
     {
@@ -11,31 +12,47 @@
     },
     {
       "option": "Not too great.",
-      "option_nextMessageId": 3
+      "option_nextMessageId": 5
     }
   ]
 },
 {
   "id": 2,
-  "text": "That's good! Keep up the optimism.",
+  "text": "That's good! Keep up the optimism. \n How may I help you?",
   "messageType": "Question",
+  "audioPath": "audio/good.mp3",
   "imageUrl": "",
   "options": [
     {
-      "option": "I'm fine.",
-      "option_nextMessageId": 2
+      "option": "I want to know how to create chatbot.",
+      "option_nextMessageId": 3
     },
     {
-      "option": "Not too great.",
-      "option_nextMessageId": 3
+      "option": "Where can I find the chatbot code to embed in my website?",
+      "option_nextMessageId": 4
     }
   ],
   "nextMessageId": ""
 },
 {
   "id": 3,
-  "text": "That's too bad. Hope things get better for you soon.",
+  "text": "Firstly, please register your publisher account.",
+  "messageType": "Text",
+  "imageUrl": "",
+  "nextMessageId": "4"
+},
+{
+  "id": 4,
+  "text": "You need to give your company information and avatar icon for chatbot.",
+  "messageType": "Text",
+  "imageUrl": "",
+  "nextMessageId": "5"
+},
+{
+  "id": 5,
+  "text": "After login with your registered account, you can find the code to embed in Publisher Detail page.",
   "messageType": "Text",
   "imageUrl": "",
   "nextMessageId": ""
-}]
+}
+]
