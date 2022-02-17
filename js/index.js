@@ -13,23 +13,17 @@ container.appendChild(chatbox);
 
 document.body.appendChild(container);
 $.getJSON("data/simple-data.json", function (jsonData) {
-  createChatButton(true, jsonData);
+  startChat(jsonData);
+  createChatButton();
 });
 
-function createChatButton(init, data) {
+function createChatButton() {
   var chatBtn = document.createElement("button");
   chatBtn.classList.add("chat-btn");
   chatBtn.innerText = "Start Chat";
   chatBtn.setAttribute("id", "chat-btn");
   document.body.appendChild(chatBtn);
-  if (init) {
-    chatBtn.addEventListener("click", function(){
-      startChat(data);
-      toggleChatWindow();
-    });
-  } else {
-    chatBtn.addEventListener("click", toggleChatWindow);
-  }
+  chatBtn.addEventListener("click", toggleChatWindow);
 }
 
 function toggleChatWindow() {
