@@ -12,13 +12,13 @@
     },
     {
       "option": "Not too great.",
-      "option_nextMessageId": 5
+      "option_nextMessageId": 6
     }
   ]
 },
 {
   "id": 2,
-  "text": "That's good! Keep up the optimism. \n How may I help you?",
+  "text": "That's good! Keep up the optimism. \nHow may I help you?",
   "messageType": "Question",
   "audioPath": "audio/good.mp3",
   "imageUrl": "",
@@ -53,6 +53,23 @@
   "text": "After login with your registered account, you can find the code to embed in Publisher Detail page.",
   "messageType": "Text",
   "imageUrl": "",
+  "nextMessageId": ""
+},
+{
+  "id": 6,
+  "text": "Sorry to hear that. \nHow may I help you?",
+  "messageType": "Question",
+  "imageUrl": "",
+  "options": [
+    {
+      "option": "I want to know how to create chatbot.",
+      "option_nextMessageId": 3
+    },
+    {
+      "option": "Where can I find the chatbot code to embed in my website?",
+      "option_nextMessageId": 4
+    }
+  ],
   "nextMessageId": ""
 }
 ]
