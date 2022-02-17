@@ -1,8 +1,9 @@
 const startId = 1;
 const delay = 1500;
+const serverUrl = "http://127.0.0.1:8887/";
 
 let container = document.createElement("div");
-container.classList.add("container");
+container.classList.add("chatbot-container");
 
 let chatbox = document.createElement("ul");
 chatbox.classList.add("chat-window");
@@ -12,18 +13,29 @@ container.style.display = "none";
 container.appendChild(chatbox);
 
 document.body.appendChild(container);
-$.getJSON("data/simple-data.json", function (jsonData) {
-  startChat(jsonData);
-  createChatButton();
+
+loadJSON(function(response) {
+  var jsonData = JSON.parse(response);
+  createChatButton(true, jsonData);
 });
 
-function createChatButton() {
-  var chatBtn = document.createElement("button");
+function createChatButton(init, data) {
+  var chatBtn = document.createElement("i");
   chatBtn.classList.add("chat-btn");
-  chatBtn.innerText = "Start Chat";
   chatBtn.setAttribute("id", "chat-btn");
+  var botImg = document.createElement("img");
+  botImg.setAttribute("src", serverUrl+"img/chatbot.png");
+  chatBtn.appendChild(botImg);
   document.body.appendChild(chatBtn);
-  chatBtn.addEventListener("click", toggleChatWindow);
+  chatBtn.addEventListener("click", function() {
+    if (init) {
+      startChat(data);
+      container.style.display = "block";
+      init = false;
+    } else {
+      toggleChatWindow();
+    }
+  });
 }
 
 function toggleChatWindow() {
@@ -125,4 +137,16 @@ function toggleLoader(status) {
       typingEle[0].parentNode.removeChild(typingEle[0])
     }
   }
+}
+
+function loadJSON(callback) {   
+  var xobj = new XMLHttpRequest();
+  xobj.overrideMimeType("application/json");
+  xobj.open("GET", serverUrl+"data/simple-data.json", true);
+  xobj.onreadystatechange = function () {
+    if (xobj.readyState == 4 && xobj.status == "200") {
+      callback(xobj.responseText);
+    }
+  };
+  xobj.send(null);  
 }

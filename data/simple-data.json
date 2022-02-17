@@ -3,7 +3,7 @@
   "text": "How are you?",
   "messageType": "Question",
   "imageUrl": "",
-  "audioPath": "audio/how_r_u.mp3",
+  "audioPath": "http://127.0.0.1:8887/audio/how_r_u.mp3",
   "nextMessageId": "",
   "options": [
     {
@@ -20,7 +20,7 @@
   "id": 2,
   "text": "That's good! Keep up the optimism. \nHow may I help you?",
   "messageType": "Question",
-  "audioPath": "audio/good.mp3",
+  "audioPath": "http://127.0.0.1:8887/audio/good.mp3",
   "imageUrl": "",
   "options": [
     {
